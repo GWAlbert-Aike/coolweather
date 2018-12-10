@@ -6,7 +6,7 @@ public class City extends LitePalSupport {
     private int id;
     private String cityName;
     private int cityCode;
-    private int proviceId; //当前市所属省的id
+    private int provinceId; //当前市所属省的id
 
     public int getId() {
         return id;
@@ -32,11 +32,11 @@ public class City extends LitePalSupport {
         this.cityCode = cityCode;
     }
 
-    public int getProviceId() {
-        return proviceId;
+    public int getProvinceId() {
+        return provinceId;
     }
 
-    public void setProviceId(int proviceId) {
-        this.proviceId = proviceId;
+    public void setProvinceId(int provinceId) {
+        this.provinceId = provinceId;
     }
 }

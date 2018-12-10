@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.litepal.LitePal;
+import org.litepal.crud.DataSupport;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -136,7 +137,8 @@ public class ChooseAreaFragment extends Fragment {
         textTitle.setText(selectedProvince.getProvinceName());
         backButton.setVisibility(View.VISIBLE);
         cityList = LitePal.where("provinceid = ?",String.valueOf(selectedProvince.getId())).find(City.class);
-        if (cityList.size()>0){
+        //cityList = LitePal.findAll(City.class);
+        if (cityList.size() > 0){
             dataList.clear();
             for(City city : cityList){
                 dataList.add(city.getCityName());
@@ -158,6 +160,7 @@ public class ChooseAreaFragment extends Fragment {
         textTitle.setText(selectedCity.getCityName());
         backButton.setVisibility(View.VISIBLE);
         countyList = LitePal.where("cityid = ?",String.valueOf(selectedCity.getId())).find(County.class);
+        //countyList = LitePal.findAll(County.class);
         if (countyList.size()>0){
             dataList.clear();
             for(County county : countyList){
